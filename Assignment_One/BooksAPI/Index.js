@@ -22,7 +22,10 @@ app.use(express.json());
 
 // test();
 
+app.use(express.static('public'));
+app.get('/', (req, res) => res.sendFile(__dirname + '/public/SimpleInterface.html'));
 
+//  app.use(express.static('public'));
 const routes = require('./Routes');
 app.use('/api', routes);
 
